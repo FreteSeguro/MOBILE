@@ -1,0 +1,82 @@
+{
+  "users": [
+    { "id": "1", "username": "Thiago", "password": "1234" },
+    { "id": "2", "username": "Paulo", "password": "1234" }
+  ],
+  "vehicles": [
+    {
+      "id": "1",
+      "userId": "Thiago",
+      "plate": "ABC1D23",
+      "model": "Crosser",
+      "type": "Moto",
+      "status": "ativo"
+    },
+    {
+      "id": "2",
+      "userId": "Thiago",
+      "plate": "XYZ4E56",
+      "model": "320i",
+      "type": "Carro",
+      "status": "ativo"
+    },
+    {
+      "id": "3",
+      "userId": "Paulo",
+      "plate": "DEF7G89",
+      "model": "Ford Ranger",
+      "type": "Carro",
+      "status": "inativo"
+    }
+  ],
+  "locations": [
+    {
+      "id": "1",
+      "vehicleId": "1",
+      "latitude": -23.5505,
+      "longitude": -46.6333,
+      "speed": 72.5,
+      "timestamp": "2023-05-15T10:30:00Z"
+    },
+    {
+      "id": "2",
+      "vehicleId": "1",
+      "latitude": -23.5510,
+      "longitude": -46.6340,
+      "speed": 68.2,
+      "timestamp": "2023-05-15T10:25:00Z"
+    },
+    {
+      "id": "3",
+      "vehicleId": "1",
+      "latitude": -23.5520,
+      "longitude": -46.6350,
+      "speed": 85.0,
+      "timestamp": "2023-05-15T10:35:00Z"
+    },
+    {
+      "id": "4",
+      "vehicleId": "2",
+      "latitude": -23.5530,
+      "longitude": -46.6360,
+      "speed": 60.0,
+      "timestamp": "2023-05-14T09:00:00Z"
+    },
+    {
+      "id": "5",
+      "vehicleId": "2",
+      "latitude": -23.5540,
+      "longitude": -46.6370,
+      "speed": 50.5,
+      "timestamp": "2023-05-14T09:05:00Z"
+    },
+    {
+      "id": "6",
+      "vehicleId": "3",
+      "latitude": -23.5600,
+      "longitude": -46.6400,
+      "speed": 0.0,
+      "timestamp": "2023-05-13T08:00:00Z"
+    }
+  ]
+}
