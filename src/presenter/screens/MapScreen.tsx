@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, ActivityIndicator, Text } from 'react-native';
 import MapView, { Marker, Polyline } from 'react-native-maps';
 import { Location } from '../../domain/entities/Vehicle';
+import { getLocationsUseCase } from '../../di';
 
 export default function MapScreen({ route }: any) {
   const { vehicleId } = route.params;
@@ -9,14 +10,9 @@ export default function MapScreen({ route }: any) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://192.168.1.90:3000/locations?vehicleId=${vehicleId}`)
-      .then(res => res.json())
-      .then(data => {
-        const sorted = data.sort((a: Location, b: Location) =>
-          new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()
-        );
-        setLocations(sorted);
-      })
+    getLocationsUseCase
+      .execute(vehicleId)
+      .then(setLocations)
       .catch(console.error)
       .finally(() => setLoading(false));
   }, [vehicleId]);
