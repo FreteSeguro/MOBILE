@@ -1,5 +1,6 @@
-import { User } from '../entities/User';
+import { User, LoginResponse } from '../entities/User';
 
 export interface UserRepository {
-  getUserByCredentials(username: string, password: string): Promise<User | null>;
+  login(email: string, password: string): Promise<LoginResponse>;
+  register(user: Omit<User, 'id'>): Promise<User>;
 }

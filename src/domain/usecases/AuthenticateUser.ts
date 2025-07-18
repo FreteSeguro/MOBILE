@@ -1,10 +1,10 @@
 import { UserRepository } from '../repositories/UserRepository';
-import { User } from '../entities/User';
+import { LoginResponse } from '../entities/User';
 
 export class AuthenticateUser {
   constructor(private userRepository: UserRepository) {}
 
-  async execute(username: string, password: string): Promise<User | null> {
-    return this.userRepository.getUserByCredentials(username, password);
+  async execute(email: string, password: string): Promise<LoginResponse> {
+    return this.userRepository.login(email, password);
   }
 }

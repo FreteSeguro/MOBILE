@@ -4,7 +4,7 @@ import { Vehicle } from '../entities/Vehicle';
 export class GetVehicles {
   constructor(private repository: VehicleRepository) {}
 
-  execute(userId: string): Promise<Vehicle[]> {
-    return this.repository.getVehiclesByUserId(userId);
+  execute(userId: number, token: string): Promise<Vehicle[]> {
+    return this.repository.getVehiclesByUserId(userId, token);
   }
 }

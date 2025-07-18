@@ -1,10 +1,11 @@
 export interface Vehicle {
-  id: string;
-  userId: string;
-  plate: string;
-  model: string;
-  type: string;
-  status: string;
+  id: number;
+  placa: string;
+  marca: string;
+  modelo: string;
+  ano: number;
+  cor: string;
+  tipo: string;
 }
 
 export interface Location {
