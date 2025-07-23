@@ -1,11 +1,10 @@
 import { UserRepository } from '../../domain/repositories/UserRepository';
 import { User, LoginResponse } from '../../domain/entities/User';
-
-const API_BASE_URL = 'http://192.168.1.90:8080';
+import { config } from '../../config';
 
 export class UserApiDatasource implements UserRepository {
   async login(email: string, password: string): Promise<LoginResponse> {
-    const response = await fetch(`${API_BASE_URL}/auth/login`, {
+    const response = await fetch(`${config.api.baseUrl}${config.api.endpoints.auth.login}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -25,7 +24,7 @@ export class UserApiDatasource implements UserRepository {
   }
 
   async register(user: Omit<User, 'id'>): Promise<User> {
-    const response = await fetch(`${API_BASE_URL}/auth/register`, {
+    const response = await fetch(`${config.api.baseUrl}${config.api.endpoints.auth.register}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

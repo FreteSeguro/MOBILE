@@ -13,6 +13,7 @@ export interface Location {
   vehicleId: string;
   latitude: number;
   longitude: number;
+  altitude?: number;
   speed: number;
   timestamp: string;
 }
